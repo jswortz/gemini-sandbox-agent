@@ -1,0 +1,11 @@
+*.pyc
+__pycache__/
+.adk/
+.venv/
+*.log
+*.txt
+debug_log.txt
+error.log
+out*.log
+full_*.txt
+*.db
