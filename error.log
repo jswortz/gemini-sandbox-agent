@@ -1,0 +1,135 @@
+/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/features/_feature_decorator.py:72: UserWarning: [EXPERIMENTAL] feature FeatureName.PLUGGABLE_AUTH is enabled.
+  check_feature_enabled()
+Deprecated. Please migrate to the async method.
+Exception in thread Thread-1 (_asyncio_thread_main):
+Traceback (most recent call last):
+  File "/usr/lib/python3.13/threading.py", line 1044, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "/usr/lib/python3.13/threading.py", line 995, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/runners.py", line 486, in _asyncio_thread_main
+    asyncio.run(_invoke_run_async())
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.13/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/usr/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/runners.py", line 479, in _invoke_run_async
+    async for event in agen:
+      event_queue.put(event)
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/runners.py", line 632, in run_async
+    async for event in agen:
+      yield event
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/runners.py", line 617, in _run_with_trace
+    async for event in agen:
+      yield event
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/runners.py", line 853, in _exec_with_plugin
+    async for event in agen:
+    ...<64 lines>...
+        yield event
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/runners.py", line 606, in execute
+    async for event in agen:
+      yield event
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/agents/base_agent.py", line 297, in run_async
+    async for event in agen:
+      yield event
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/agents/llm_agent.py", line 487, in _run_async_impl
+    async for event in agen:
+    ...<5 lines>...
+        should_pause = True
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 804, in run_async
+    async for event in agen:
+      last_event = event
+      yield event
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 881, in _run_one_step_async
+    async for llm_response in agen:
+    ...<13 lines>...
+          yield event
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 1261, in _call_llm_async
+    async for event in agen:
+      yield event
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 1239, in _call_llm_with_tracing
+    async for llm_response in agen:
+    ...<18 lines>...
+      yield llm_response
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 1322, in _run_and_handle_error
+    async for response in agen:
+      yield response
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 406, in _run_and_handle_error
+    raise model_error
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/flows/llm_flows/base_llm_flow.py", line 379, in _run_and_handle_error
+    async for llm_response in agen:
+    ...<5 lines>...
+      yield llm_response
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/models/google_llm.py", line 266, in generate_content_async
+    raise ce
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/adk/models/google_llm.py", line 245, in generate_content_async
+    response = await self.api_client.aio.models.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/genai/models.py", line 8337, in generate_content
+    return await self._generate_content(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        model=model, contents=contents, config=parsed_config
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/genai/models.py", line 6897, in _generate_content
+    response = await self._api_client.async_request(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        'post', path, request_dict, http_options
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/tests/test_agent.py", line 5, in mock_req
+    return await original_req(self, method, path, r, h)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/genai/_api_client.py", line 1583, in async_request
+    result = await self._async_request(
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+        http_request=http_request, http_options=http_options, stream=False
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/genai/_api_client.py", line 1516, in _async_request
+    return await self._async_retry(  # type: ignore[no-any-return]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+        self._async_request_once, http_request, stream
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 112, in __call__
+    do = await self.iter(retry_state=retry_state)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 157, in iter
+    result = await action(retry_state)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/tenacity/_utils.py", line 111, in inner
+    return call(*args, **kwargs)
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/tenacity/__init__.py", line 393, in <lambda>
+    self._add_action_func(lambda rs: rs.outcome.result())
+                                     ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/usr/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/tenacity/asyncio/__init__.py", line 116, in __call__
+    result = await fn(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/genai/_api_client.py", line 1448, in _async_request_once
+    await errors.APIError.raise_for_async_response(response)
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/genai/errors.py", line 247, in raise_for_async_response
+    await cls.raise_error_async(status_code, response_json, response)
+  File "/usr/local/google/home/jwortz/gemini-sandbox-agent/.venv/lib/python3.13/site-packages/google/genai/errors.py", line 269, in raise_error_async
+    raise ClientError(status_code, response_json, response)
+google.genai.errors.ClientError: 404 NOT_FOUND. {'error': {'code': 404, 'message': 'Publisher Model `projects/wortz-project-352116/locations/us-central1/publishers/google/models/gemini-1.5-flash-001` was not found or your project does not have access to it. Please ensure you are using a valid model version. For more information, see: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions', 'status': 'NOT_FOUND', 'details': [{'@type': 'type.googleapis.com/google.rpc.DebugInfo', 'detail': '[ORIGINAL ERROR] generic::not_found: Publisher Model `projects/wortz-project-352116/locations/us-central1/publishers/google/models/gemini-1.5-flash-001` was not found or your project does not have access to it. Please ensure you are using a valid model version. For more information, see: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions [google.rpc.error_details_ext] { message: "Publisher Model `projects/wortz-project-352116/locations/us-central1/publishers/google/models/gemini-1.5-flash-001` was not found or your project does not have access to it. Please ensure you are using a valid model version. For more information, see: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions" } 525003295 { 1 { 1 { 1 { 2: "Cardolan" 3: "GenerateContent" } 2 { 1: 5 2: "generic" 3: "Publisher Model `projects/wortz-project-352116/locations/us-central1/publishers/google/models/gemini-1.5-flash-001` was not found or your project does not have access to it. Please ensure you are using a valid model version. For more information, see: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions" 5 { 1 { 2: 82012934 3 { 2: "Publisher Model `projects/wortz-project-352116/locations/us-central1/publishers/google/models/gemini-1.5-flash-001` was not found or your project does not have access to it. Please ensure you are using a valid model version. For more information, see: https://cloud.google.com/vertex-ai/generative-ai/docs/learn/model-versions" } } } } 8: 1 10 { 1: 0 } } 2: "VertexServingRpcRoot" } }'}]}}

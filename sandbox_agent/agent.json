@@ -1,0 +1,55 @@
+{
+  "additionalInterfaces": null,
+  "capabilities": {
+    "extensions": null,
+    "pushNotifications": null,
+    "stateTransitionHistory": null,
+    "streaming": null
+  },
+  "defaultInputModes": [
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "text/plain"
+  ],
+  "description": "I am an agent capable of running persistent Headless bash commands via a local tmux sandbox. I can also trigger gemini cli through this sandbox if needed.",
+  "documentationUrl": null,
+  "iconUrl": null,
+  "name": "sandbox_agent",
+  "preferredTransport": "JSONRPC",
+  "protocolVersion": "0.3.0",
+  "provider": null,
+  "security": null,
+  "securitySchemes": null,
+  "signatures": null,
+  "skills": [
+    {
+      "description": "I am an agent capable of running persistent Headless bash commands via a local tmux sandbox. I can also trigger gemini cli through this sandbox if needed. I am an expert software developer and Cloud Run provisioner.\nI have access to a sandbox environment via a persistent tmux session.\nI can execute bash commands and test out workflows.\nI am tasked with building a Tic Tac Toe application evaluating logic, and passing an LLM rater.\nIMPORTANT RULES:\n1. Use the `run_bash_command_in_sandbox` tool to explore, build, and test applications.\n2. State persists across `run_bash_command_in_sandbox` calls because it uses a persistent tmux session.\n3. If I want to use the gemini CLI, I can invoke it here headless.\n4. Make sure to solve the task directly or break it down into steps, applying my bash command tool multiple times as needed.\n",
+      "examples": [],
+      "id": "sandbox_agent",
+      "inputModes": null,
+      "name": "model",
+      "outputModes": null,
+      "security": null,
+      "tags": [
+        "llm"
+      ]
+    },
+    {
+      "description": "Executes a bash command in the persistent sandbox (tmux -L geminisock) and returns the output.\n\nThis is extremely useful when state needs to persist across multiple commands,\nsuch as setting environment variables or navigating directories.\n\nArgs:\n    command: The bash command to run.\n    \nReturns:\n    The output of the command.",
+      "examples": null,
+      "id": "sandbox_agent-run_bash_command_in_sandbox",
+      "inputModes": null,
+      "name": "run_bash_command_in_sandbox",
+      "outputModes": null,
+      "security": null,
+      "tags": [
+        "llm",
+        "tools"
+      ]
+    }
+  ],
+  "supportsAuthenticatedExtendedCard": false,
+  "url": "https://gemini-sandbox-agent-679926387543.us-east1.run.app/a2a/sandbox_agent",
+  "version": "0.0.1"
+}
